@@ -1,0 +1,757 @@
+/* Google Fonts Import para sa Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+:root {
+  --bg-primary: #f6f8fa; /* Magandang neutral light gray */
+  --bg-card: #ffffff;
+  --bg-sub: #f3f4f6;
+  --text-main: #1f2937;
+  --text-muted: #6b7280;
+  --accent-color: #0070f3; 
+  --border-radius-md: 12px;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --transition: all 0.25s ease;
+}
+
+/* ==========================================================================
+   🌙 MABABASANG PREMIUM DARK MODE VARIABLES
+   ========================================================================== */
+.dark {
+  --bg-primary: #0a0e17; 
+  --bg-card: #131a26;
+  --bg-sub: #1c2638;
+  --text-main: #f3f4f6;
+  --text-muted: #9ca3af;
+  --accent-color: #38bdf8;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-main);
+  transition: var(--transition);
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   CONTAINER GRID WITH ELEGANT VERTICAL SEPARATOR
+   ========================================================================== */
+.container {
+  width: 92%;
+  max-width: 1140px;
+  margin: auto;
+  padding: 60px 0;
+  display: grid;
+  grid-template-columns: 1.4fr 1.1fr; /* Balanseng hatian */
+  gap: 50px; 
+}
+
+/* LEFT SIDE STRUCTURE */
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  padding-right: 30px; 
+  border-right: 1px solid rgba(0, 0, 0, 0.08); /* Manipis na guhit sa gitna */
+}
+
+.dark .left {
+  border-right: 1px solid rgba(255, 255, 255, 0.08); 
+}
+
+/* ==========================================================================
+   PROFILE CARD ALIGNMENT & DESIGN (PERFECTLY CENTERED VIEW)
+   ========================================================================== */
+.profile-display {
+  padding: 10px 0;
+}
+
+.profile-card-flex {
+  display: flex;
+  align-items: center; /* Ito ang nagpapanatili sa image na nasa middle vertically */
+  gap: 30px;
+}
+
+.avatar-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0; 
+}
+
+/* PREMIUM 1x1 AVATAR STYLING */
+.avatar-wrapper img {
+  width: 120px;          
+  height: 120px;         
+  border-radius: 50%;    
+  object-fit: cover;     
+  object-position: center top; 
+  border: 3px solid var(--bg-card); 
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); 
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+}
+
+.avatar-wrapper img:hover {
+  transform: scale(1.05); 
+  box-shadow: 0 12px 28px rgba(0, 70, 243, 0.15); 
+}
+
+.dark .avatar-wrapper img {
+  border-color: var(--bg-card); 
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4); 
+}
+
+/* Online Status Indicator */
+.online-badge {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  width: 14px;
+  height: 14px;
+  background: #22c55e;
+  border: 2.5px solid var(--bg-primary);
+  border-radius: 50%;
+  transition: var(--transition);
+}
+
+.dark .online-badge {
+  border-color: var(--bg-primary);
+}
+
+/* Profile Text Details */
+.profile-info h1 {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+  line-height: 1.2;
+}
+
+.name-badge-row { display: flex; align-items: center; gap: 6px; }
+.verified-badge { color: var(--accent-color); font-size: 16px; display: flex; align-items: center; }
+
+.location {
+  margin: 4px 0;
+  color: var(--text-muted);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.role {
+  font-weight: 600;
+  color: var(--accent-color);
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+
+/* Profile Counters */
+.profile-stats {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 16px;
+  padding: 8px 0;
+}
+
+.stat-item {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.stat-item strong {
+  color: var(--text-main);
+  font-size: 18px;
+  display: block;
+  font-weight: 700;
+}
+
+/* Action Buttons */
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.buttons button {
+  border: none;
+  padding: 10px 22px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 13px;
+  transition: var(--transition);
+}
+
+.buttons button:not(.primary) {
+  background: rgba(0,0,0,0.04);
+  color: var(--text-main);
+}
+
+.dark .buttons button:not(.primary) {
+  background: rgba(255,255,255,0.05);
+  color: var(--text-main);
+}
+
+.buttons button:not(.primary):hover {
+  background: rgba(0,0,0,0.08);
+}
+
+.primary {
+  background: var(--text-main) !important;
+  color: var(--bg-card) !important;
+}
+
+.primary:hover {
+  opacity: 0.9;
+}
+
+/* ==========================================================================
+   HAIRLINE SECTION DIVIDERS (Name, About, Experience Separators)
+   ========================================================================== */
+.section-divider {
+  border: none; 
+  border-top: 1px solid rgba(0, 0, 0, 0.06); /* Super manipis na linya */
+  margin: 5px 0; 
+  width: 100%;
+}
+
+.dark .section-divider {
+  border-top: 1px solid rgba(255, 255, 255, 0.06); 
+}
+
+/* Text Sections Display */
+.text-display-section h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  letter-spacing: -0.3px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.text-display-section p {
+  color: #4b5563;
+  font-size: 15px;
+  text-align: justify;
+}
+
+.dark .text-display-section p {
+  color: #d1d5db;
+}
+
+/* Experience Sub-items Line Style */
+.experience {
+  border-left: 2px solid #e5e7eb;
+  padding-left: 18px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.dark .experience {
+  border-left: 2px solid var(--bg-sub);
+}
+
+.experience::before {
+  content: '';
+  position: absolute;
+  left: -5px;
+  top: 6px;
+  width: 8px;
+  height: 8px;
+  background: var(--text-main);
+  border-radius: 50%;
+}
+
+.experience h3 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.experience p {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.experience small {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   RIGHT SIDE: COMPACT SOCMED CONTAINERS
+   ========================================================================== */
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.socmed-card {
+  background: var(--bg-card);
+  padding: 22px; 
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.dark .socmed-card {
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.socmed-card h2 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Compact Theme Toggle Container */
+.compact-theme {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+}
+
+.compact-theme span {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   BLACK & WHITE THEME TOGGLE BUTTON LOGIC
+   ========================================================================== */
+#themeBtn {
+  border: 1px solid rgba(0, 0, 0, 0.08); 
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  background: var(--bg-card);
+  color: var(--text-main);
+  font-size: 12px;
+  font-weight: 500;
+  transition: var(--transition);
+  display: inline-flex; 
+  align-items: center;
+  gap: 6px;
+}
+
+#themeBtn:hover {
+  background: var(--bg-sub);
+}
+
+/* 1. Light Mode (Default) Icon: Pure Solid Black */
+#themeBtn i {
+  color: #000000 !important; 
+  transition: var(--transition);
+}
+
+/* 2. Dark Mode: Auto-switch icon and outline border to White */
+.dark #themeBtn {
+  border: 1px solid rgba(255, 255, 255, 0.18); 
+}
+
+.dark #themeBtn i {
+  color: #ffffff !important; 
+}
+
+#themeBtn:hover i {
+  opacity: 0.7;
+}
+
+/* Project Layout Cards */
+.title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.title-row h2 { margin-bottom: 0; }
+.title-row .view-all-btn { font-size: 12px; font-weight: 600; color: var(--accent-color); cursor: pointer; }
+
+.project-box {
+  padding: 14px;
+  background: var(--bg-primary);
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: var(--transition);
+}
+
+.project-box:last-child { margin-bottom: 0; }
+.project-box:hover { background: #edf0f3; }
+.dark .project-box:hover { background: #1c2638; }
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.project-box h3 { font-size: 14px; font-weight: 600; }
+.project-tag {
+  font-size: 10px;
+  background: var(--bg-card);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+.project-box p { font-size: 12px; color: var(--text-muted); }
+
+/* Skills Bar Indicator */
+.skill { margin-bottom: 12px; }
+.skill:last-child { margin-bottom: 0; }
+.skill-top { display: flex; justify-content: space-between; margin-bottom: 6px; font-size: 13px; font-weight: 500; }
+
+.bar { width: 100%; height: 6px; background: var(--bg-sub); border-radius: 10px; overflow: hidden; }
+.fill { height: 100%; border-radius: 10px; background: var(--text-main) !important; }
+.dark .fill { background: var(--accent-color) !important; }
+
+.html { width: 90%; }
+.css { width: 85%; }
+.js { width: 75%; }
+
+/* Social Direct Items */
+.social {
+  background: var(--bg-primary);
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+
+.social:last-child { margin-bottom: 0; }
+.social:hover { background: var(--text-main); color: var(--bg-card); }
+
+
+.social-icon { width: 20px; text-align: center; margin-right: 10px; font-size: 15px; }
+.arrow-end { margin-left: auto; font-size: 11px; opacity: 0.4; }
+
+/* ==========================================================================
+   SOCMED STYLE IMAGE POPUP MODAL
+   ========================================================================== */
+.image-modal {
+  display: none; 
+  position: fixed;
+  z-index: 9999; 
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.85); 
+  backdrop-filter: blur(5px); 
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80vh; 
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  animation: zoomEffect 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes zoomEffect {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.close-modal {
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: 300;
+  transition: 0.2s;
+  cursor: pointer;
+  line-height: 1;
+}
+.close-modal:hover { color: var(--accent-color); transform: scale(1.1); }
+
+/* ==========================================================================
+   MOBILE RESPONSIVENESS MEDIA QUERY
+   ========================================================================== */
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+    padding: 30px 0;
+    gap: 30px;
+  }
+
+  .left {
+    padding-right: 0;
+    border-right: none; 
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08); 
+    padding-bottom: 25px;
+  }
+  
+  .dark .left {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .profile-card-flex {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .name-badge-row, .profile-stats, .buttons {
+    justify-content: center;
+  }
+  
+  .modal-content { width: 95%; }
+  .close-modal { top: 15px; right: 25px; font-size: 35px; }
+}
+
+/* HIGHLIGHTS CARDS LAYOUT */
+.highlights-section {
+  width: 100%;
+  padding: 5px 0;
+}
+.highlights-section h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.highlights-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 5px 2px;
+}
+.highlights-container::-webkit-scrollbar {
+  display: none; /* Tago ang scrollbar para malinis */
+}
+.highlight-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+}
+.highlight-card:hover {
+  transform: scale(1.05);
+}
+.highlight-ring {
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5px; 
+}
+.highlight-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--bg-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+}
+.highlight-inner img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.highlight-card span {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+/* STORIES TRANSPARENT MODAL DESIGN */
+/* STORIES TRANSPARENT MODAL DESIGN (UPDATED FOR CONSISTENCY) */
+.story-modal {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85); /* Katulad ng .image-modal background */
+  backdrop-filter: blur(5px);           /* Katulad ng .image-modal blur effect */
+  align-items: center;
+  justify-content: center;
+}
+.story-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  height: 90vh;
+  max-height: 780px;
+  background: #000;
+  border-radius: 12px;                  /* Katulad ng .modal-content border-radius */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5); /* Katulad ng .modal-content shadow */
+  animation: storyZoomIn 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Katulad ng profile zoom curve */
+}
+@keyframes storyZoomIn {
+  from { transform: scale(0.8); opacity: 0; } /* Inadjust sa 0.8 para parehas ng transition */
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* STORY CLOSE BUTTON (UPDATED TO MATCH PROFILE MODAL CLOSE) */
+.story-close {
+  position: absolute;
+  top: 25px;       /* Kaparehas ng .close-modal position */
+  right: 35px;     /* Kaparehas ng .close-modal position */
+  color: #f1f1f1;  /* Kaparehas ng .close-modal default color */
+  font-size: 40px; /* Kaparehas ng .close-modal size */
+  font-weight: 300;
+  transition: 0.2s;/* Kaparehas ng .close-modal speed transition */
+  cursor: pointer;
+  line-height: 1;
+  z-index: 10005;
+}
+.story-close:hover { 
+  color: var(--accent-color); /* Magpapalit din ng accent color gaya ng profile X button */
+  transform: scale(1.1);       /* May kaunting zoom din kapag ni-hover */
+}
+
+/* SEGMENTED PROGRESS BARS (UPPER CODES) */
+.story-progress-container {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  gap: 5px;
+  z-index: 10;
+}
+.story-progress-bar {
+  height: 3px;
+  flex: 1;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.story-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: #ffffff;
+}
+
+/* TOP METADATA AUTHOR HEADER */
+.story-header-info {
+  position: absolute;
+  top: 25px;
+  left: 15px;
+  right: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 10;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+}
+.story-author-img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid #ffffff;
+}
+.story-author-name { font-size: 14px; font-weight: 600; display: block; }
+.story-time-badge { font-size: 11px; color: rgba(255,255,255,0.75); }
+
+/* MAIN VIEWPORT DISPLAY CONFIG */
+.story-content-box { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+.story-content-box img { width: 100%; height: 100%; object-fit: cover; }
+
+/* NAVIGATION CONTROLS SETUP */
+.story-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 15;
+}
+.nav-left { left: 12px; }
+.nav-right { right: 12px; }
+
+/* BOTTOM PILL PROFILE MENTION */
+.story-footer-tag {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+.mention-pill {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  color: #ffffff;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: max-content;
+}
+@media (max-width: 900px) {
+  /* ... panatilihin ang mga kasalukuyang codes mo rito ... */
+
+  /* Idagdag ito sa loob ng 900px media query para sa sync alignment */
+  .story-close { 
+    top: 15px; 
+    right: 25px; 
+    font-size: 35px; 
+  }
+}
+
+@media (max-width: 500px) {
+  .story-wrapper { width: 100%; height: 100vh; max-height: 100vh; border-radius: 0; }
+}
+

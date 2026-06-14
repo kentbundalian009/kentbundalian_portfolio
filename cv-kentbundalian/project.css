@@ -1,0 +1,670 @@
+/* Google Fonts Import para sa Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght=300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+:root {
+  --bg-primary: #f6f8fa; /* Magandang neutral light gray */
+  --bg-card: #ffffff;
+  --bg-sub: #f3f4f6;
+  --text-main: #1f2937;
+  --text-muted: #6b7280;
+  --accent-color: #0070f3; 
+  --border-radius-md: 12px;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --transition: all 0.25s ease;
+}
+
+/* ==========================================================================
+   🌙 MABABASANG PREMIUM DARK MODE VARIABLES
+   ========================================================================== */
+.dark {
+  --bg-primary: #0a0e17; 
+  --bg-card: #131a26;
+  --bg-sub: #1c2638;
+  --text-main: #f3f4f6;
+  --text-muted: #9ca3af;
+  --accent-color: #38bdf8;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-main);
+  transition: var(--transition);
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   CONTAINER GRID WITH ELEGANT VERTICAL SEPARATOR (Pinalawak ang Left Pane)
+   ========================================================================== */
+.container {
+  width: 92%;
+  max-width: 1140px;
+  margin: auto;
+  padding: 60px 0;
+  display: grid;
+  grid-template-columns: 1.8fr 0.8fr; /* Binagong ratio: Mas malawak ang left panel */
+  gap: 40px; 
+}
+
+/* LEFT SIDE STRUCTURE */
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 35px; /* Ginawang 35px para tugma sa home.css */
+  padding-right: 30px; 
+  border-right: 1px solid rgba(0, 0, 0, 0.08); /* Manipis na guhit sa gitna */
+}
+
+.dark .left {
+  border-right: 1px solid rgba(255, 255, 255, 0.08); 
+}
+
+/* RIGHT SIDE STRUCTURE */
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ==========================================================================
+   HEADER ACTIONS & TYPOGRAPHY
+   ========================================================================== */
+.back-home-btn {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 500;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: -10px; /* Mas pinadikit sa title para malinis */
+}
+.back-home-btn:hover { 
+  color: var(--accent-color); 
+}
+
+.page-title-row h2 {
+  font-size: 32px; /* Pinantay sa laki ng h1 sa Home Profile para premium */
+  font-weight: 700;
+  letter-spacing: -0.8px;
+  line-height: 1.2;
+}
+
+.page-title-row p {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+/* HAIRLINE SECTION DIVIDERS */
+.section-divider {
+  border: none; 
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  margin: 5px 0; 
+  width: 100%;
+}
+.dark .section-divider { 
+  border-top: 1px solid rgba(255, 255, 255, 0.06); 
+}
+
+/* ==========================================================================
+   📂 GOOGLE DRIVE 4-COLUMN FOLDER GRID LAYOUT
+   ========================================================================== */
+.gdrive-section-title {
+  font-size: 15px; /* Pinantay sa socmed card header */
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  margin-bottom: -10px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Solid na 4 columns para sa folders */
+  gap: 16px;
+}
+
+.project-folder-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 24px 12px 16px 12px; /* Breathing room para sa compact design */
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column; /* Vertical axis alignment */
+  align-items: center;    /* Gitna ang content horizontally */
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+  position: relative;     /* Anchor para sa absolute positioning ng tag */
+  min-height: 142px;      /* Pantay-pantay ang taas kahit magkaiba ang haba ng pamagat */
+}
+.dark .project-folder-card { 
+  border-color: rgba(255, 255, 255, 0.05); 
+}
+
+.project-folder-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent-color);
+  background: var(--bg-sub);
+}
+
+.folder-icon-wrapper {
+  display: flex;
+  flex-direction: column; /* Ginawang patayo ang icon at pamagat */
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.folder-icon {
+  font-size: 42px; /* Pinalaki para maging mukhang tunay na Google Drive folder */
+  color: #a8b3c2;
+  transition: var(--transition);
+}
+.project-folder-card:hover .folder-icon { 
+  color: var(--accent-color); 
+}
+
+.project-folder-card h3 {
+  font-size: 12px; /* Mas pinaliit at pinong font name para malinis basahin */
+  font-weight: 500; 
+  color: var(--text-main);
+  line-height: 1.4;
+  word-break: break-word;
+  display: -webkit-box;   /* Nililimitahan sa maximum na 2 lines para iwas sirang layout */
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.project-tag {
+  position: absolute; /* Nilagay sa kanang itaas na sulok ng card */
+  top: 8px;
+  right: 8px;
+  font-size: 9px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+  background: var(--bg-sub);
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   RIGHT SIDE WIDGETS (100% Match sa home.css)
+   ========================================================================== */
+.socmed-card {
+  background: var(--bg-card);
+  padding: 22px; 
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+.dark .socmed-card { 
+  border: 1px solid rgba(255, 255, 255, 0.03); 
+}
+
+.socmed-card h2 {
+  font-size: 15px; /* Match sa home css */
+  font-weight: 600;
+  margin-bottom: 16px; /* Match sa home css */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.compact-theme {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+}
+.compact-theme span { 
+  font-size: 13px; 
+  font-weight: 500; 
+  color: var(--text-muted); 
+}
+
+/* THEME TOGGLE BUTTON ENGINE */
+#themeBtn {
+  border: 1px solid rgba(0, 0, 0, 0.08); 
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  background: var(--bg-card);
+  color: var(--text-main);
+  font-size: 12px;
+  font-weight: 500;
+  transition: var(--transition);
+  display: inline-flex; 
+  align-items: center;
+  gap: 6px;
+}
+#themeBtn:hover { 
+  background: var(--bg-sub); 
+}
+#themeBtn i { 
+  color: #000000 !important; 
+}
+.dark #themeBtn { 
+  border: 1px solid rgba(255, 255, 255, 0.18); 
+}
+.dark #themeBtn i { 
+  color: #ffffff !important; 
+}
+
+/* ==========================================================================
+   🌟 PREMIUM SOCIAL MEDIA STYLE DUAL-PANE LIGHTBOX MODAL
+   ========================================================================== */
+.project-modal {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  background: var(--bg-card);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+  animation: modalScaleUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes modalScaleUp {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.close-modal {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  color: #ffffff;
+  font-size: 24px; /* Bahagyang pinaliit para mas classy */
+  font-weight: 300;
+  cursor: pointer;
+  z-index: 10200;
+  transition: var(--transition);
+  background: rgba(0,0,0,0.4);
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.close-modal:hover { 
+  background: rgba(0,0,0,0.8); 
+  color: var(--accent-color); 
+}
+
+/* Pane Splitting Mechanics */
+.modal-split-container {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr; /* Mas pinalapad ang kaliwang pane para sa images */
+  height: 80vh;
+  max-height: 600px;
+}
+
+/* Gallery Engine (Left Panel) */
+.modal-gallery-pane {
+  background: #05070c; /* Mas malalim na itim para lutang ang screenshots */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.modal-gallery-pane img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 10px; /* Iwas sagad sa corners ng app window */
+}
+
+/* Navigation Arrow System */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
+  color: white;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  backdrop-filter: blur(4px);
+  z-index: 10100;
+}
+.nav-btn:hover { 
+  background: var(--accent-color); 
+  transform: translateY(-50%) scale(1.05);
+}
+.prev-btn { left: 15px; }
+.next-btn { right: 15px; }
+
+/* Data Metadata Engine (Right Panel) */
+.modal-info-pane {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  background: var(--bg-card);
+}
+
+.pane-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06); /* Inline divider style */
+}
+.dark .pane-header { 
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06); 
+}
+
+.pane-header .avatar-wrapper img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.pane-title-meta h2 {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.pane-title-meta .role {
+  font-size: 12px;
+  color: var(--accent-color);
+  font-weight: 500;
+  margin-bottom: 0; /* Override margin from home */
+}
+
+.pane-body {
+  margin-top: 20px;
+}
+
+.pane-body h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pane-body p {
+  font-size: 14px;
+  color: var(--text-main);
+  margin-bottom: 25px;
+  text-align: justify;
+  line-height: 1.6;
+}
+
+.tech-stack-used {
+  margin-top: 15px;
+}
+
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tech-pill {
+  font-size: 12px;
+  font-weight: 500;
+  background: var(--bg-sub);
+  color: var(--text-main);
+  padding: 4px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(0,0,0,0.03);
+}
+
+/* ==========================================================================
+   MOBILE RESPONSIVENESS MEDIA QUERY (Inayos para sa Grid Layout)
+   ========================================================================== */
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+    padding: 30px 0;
+    gap: 30px;
+  }
+  
+  .left {
+    padding-right: 0;
+    border-right: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    padding-bottom: 25px;
+  }
+  .dark .left { 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08); 
+  }
+
+  /* Ginawang 2-columns ang folders sa tablets para hindi siksik */
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  /* Split Pane Layout transforms to Stacked on Mobile devices */
+  .modal-split-container {
+    grid-template-columns: 1fr;
+    height: 85vh;
+    max-height: none;
+  }
+  
+  .modal-gallery-pane {
+    height: 250px;
+    flex-shrink: 0;
+  }
+  
+  .modal-info-pane {
+    padding: 22px;
+  }
+}
+
+/* Para sa maliliit na Smartphones */
+@media (max-width: 480px) {
+  .projects-grid {
+    grid-template-columns: 1fr; /* Isang folder kada linya kapag maliit na phone */
+  }
+}
+
+
+/* ==========================================================================
+   🎯 ULTIMATE ANTI-MISALIGNMENT ENGINE (PIXEL-PERFECT SYNC)
+   ========================================================================== */
+
+/* 1. Siguraduhing parehong-pareho ang hatian ng Grid Matrix */
+.container {
+  display: grid !important;
+  grid-template-columns: 1.8fr 0.8fr !important;
+  gap: 40px !important;
+  align-items: start !important; /* Pinipigilan ang stretch bug ng flex/grid boxes */
+}
+
+/* 2. Pwersahin ang width ng Right area para hindi siya ma-deform ng Left side content */
+.right {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 20px !important;
+  width: 100% !important;
+  max-width: 320px !important; /* Nilagyan ng hard boundary para permanenteng pareho ang lapad */
+}
+
+/* 3. Pag-pantayin ang sukat at padding ng Cards */
+.right .socmed-card {
+  background: var(--bg-card) !important;
+  padding: 22px !important;
+  border-radius: var(--border-radius-md) !important;
+  box-shadow: var(--shadow-sm) !important;
+  box-sizing: border-box !important;
+}
+
+/* 4. Pantayin ang Fonts, Weights, at Spacing ng H2 Pamagat */
+.right .socmed-card h2 {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 600 !important; /* Sinisigurong 600 weight sa dalawang page */
+  letter-spacing: 0.5px !important;
+  text-transform: uppercase !important;
+  color: var(--text-muted) !important;
+  margin: 0 0 14px 0 !important;
+}
+
+/* 5. Pantayin ang Talata o Deskripsyon */
+.right .socmed-card p {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 400 !important; /* Puwersahing normal weight, iwas maging bold ang isa */
+  color: var(--text-muted) !important;
+  line-height: 1.6 !important;
+  text-align: left !important;
+  margin: 0 !important;
+}
+
+/* 6. Interface Mode Text & Toggle Button Wrapper */
+.compact-theme {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 12px 20px !important; /* Mas manipis na padding para sa dedicated indicator layout */
+}
+
+.compact-theme span {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  color: var(--text-muted) !important;
+}
+
+
+
+/* =========================
+   MOBILE RESPONSIVE FIX
+   ========================= */
+
+@media (max-width: 900px) {
+
+  .container {
+    grid-template-columns: 1fr !important;
+    gap: 25px !important;
+    width: 95%;
+    padding: 20px 0 !important;
+  }
+
+  .left {
+    border-right: none !important;
+    padding-right: 0 !important;
+  }
+
+  .right {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .page-title-row h2 {
+    font-size: 26px;
+  }
+
+  .modal-split-container {
+    grid-template-columns: 1fr !important;
+    height: auto !important;
+  }
+
+  .modal-gallery-pane {
+    height: 280px;
+  }
+
+  .modal-info-pane {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .project-folder-card {
+    min-height: 110px;
+    padding: 18px 12px;
+  }
+
+  .folder-icon {
+    font-size: 34px;
+  }
+
+  .project-folder-card h3 {
+    font-size: 13px;
+  }
+
+  .compact-theme {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .page-title-row h2 {
+    font-size: 22px;
+  }
+
+  .page-title-row p {
+    font-size: 13px;
+  }
+
+  .modal-gallery-pane {
+    height: 220px;
+  }
+
+  .modal-wrapper {
+    width: 95%;
+  }
+
+  .nav-btn {
+    width: 36px;
+    height: 36px;
+  }
+}

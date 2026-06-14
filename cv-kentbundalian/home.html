@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kent Bundalian | Portfolio</title>
+
+    <link rel="shortcut icon" href="1x1-photo.png" type="image/x-icon">
+
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="left">
+
+            <div class="profile-display">
+                <div class="profile-card-flex">
+                    <div class="avatar-wrapper">
+                        <img src="1x1-photo.png" alt="Kent Bundalian">
+                        <span class="online-badge"></span>
+                    </div>
+
+                    <!-- IMAGE MODAL POPUP -->
+                    <div id="imageModal" class="image-modal">
+                        <span class="close-modal">&times;</span>
+                        <img class="modal-content" id="imgModalTarget">
+                    </div>
+
+                    <div class="profile-info">
+                        <div class="name-badge-row">
+                            <h1>Kent Bundalian</h1>
+                            <span class="verified-badge" title="Verified Professional"><i
+                                    class="fa-solid fa-circle-check"></i></span>
+                        </div>
+                        <p class="location"><i class="fa-solid fa-location-dot"></i> Calamba City, Laguna</p>
+                        <p class="role">Web Developer</p>
+
+                        <div class="profile-stats">
+                            <div class="stat-item"><strong>4</strong> <span>Projects</span></div>
+                            <div class="stat-item"><strong>300+</strong> <span>Commits</span></div>
+                            <div class="stat-item"><strong>100%</strong> <span>Success</span></div>
+                        </div>
+
+                        <div class="buttons">
+    <button class="primary"
+        onclick="window.open('https://mail.google.com/mail/?view=cm&fs=1&to=kentbundalian009@gmail.com', '_blank')">
+        <i class="fa-solid fa-paper-plane"></i> Hire Me
+    </button>
+</div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="section-divider">
+
+            <div class="highlights-section">
+                <h2><i class="fa-regular fa-star"></i> Highlights</h2>
+                <div class="highlights-container">
+
+                    <div class="highlight-card" onclick="openHighlightModal(0)">
+                        <div class="highlight-ring">
+                            <div class="highlight-inner">
+                                <img src="certificate/c2.jpg" alt="Featured Cover">
+                            </div>
+                        </div>
+                        <span>Certificate</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <hr class="section-divider">
+
+
+            <div class="text-display-section">
+                <h2><i class="fa-regular fa-user"></i> About</h2>
+                <p style="margin-bottom: 15px;">
+                    I am an incoming 4th-year Information Technology student at <strong>City College of
+                        Calamba</strong>,
+                    passionate about crafting clean, minimalist, and highly functional web applications.
+                    Throughout my academic journey, I have naturally stepped into leadership roles, guiding
+                    development teams to build efficient and impactful real-world systems.
+                </p>
+                <p>
+                    My experience spans from building foundational <strong>POS and Operating System projects</strong>
+                    to executing independent full-stack solutions. I have successfully delivered an <strong>Inventory &
+                        Tracking System</strong>
+                    for <em>Upright Storage Solution PH</em>, and I am currently developing an enterprise-grade
+                    <strong>Full-Stack Platform with Advanced Marketing Analytics</strong> for a fast-growing local
+                    cosmetics brand.
+                    Driven by continuous learning, I bridge the gap between creative UI design and robust backend
+                    architecture.
+                </p>
+            </div>
+
+
+            <div id="storyModal" class="story-modal">
+                <span class="story-close" onclick="closeStoryModal()">&times;</span>
+
+                <div class="story-wrapper">
+                    <div class="story-progress-container" id="storyProgressContainer"></div>
+
+                    <div class="story-header-info">
+                        <img src="1x1-photo.png" alt="Profile" class="story-author-img">
+                        <div class="story-author-details">
+                            <span class="story-author-name">Kent Bundalian</span>
+                            <span class="story-time-badge" id="storyTimeBadge">recent</span>
+                        </div>
+                    </div>
+
+                    <div class="story-content-box">
+                        <img id="storyMainImage" src="" alt="Story Asset">
+                    </div>
+
+                    <button class="story-nav nav-left" onclick="prevStory()"><i
+                            class="fa-solid fa-chevron-left"></i></button>
+                    <button class="story-nav nav-right" onclick="nextStory()"><i
+                            class="fa-solid fa-chevron-right"></i></button>
+
+                    <div class="story-footer-tag" id="storyFooterTag"></div>
+                </div>
+            </div>
+
+            <hr class="section-divider">
+
+            <div class="text-display-section">
+                <h2><i class="fa-solid fa-briefcase"></i> Experience</h2>
+
+                <!-- 4TH YEAR: ONGOING COSMETICS PROJECT -->
+                <div class="experience">
+                    <h3>Full-Stack & Analytics Developer (Academic Capstone)</h3>
+                    <p>
+                        Designing and building an enterprise-grade full-stack platform for a growing local cosmetics
+                        brand.
+                        Focused on crafting data-rich marketing analytics dashboards and interactive inventory tracking
+                        features.
+                    </p>
+                    <small>2026 - Present (4th Year)</small>
+                </div>
+
+                <!-- 3RD YEAR: UPRIGHT STORAGE SOLUTION -->
+                <div class="experience">
+                    <h3>Lead Frontend UI Designer (Academic Thesis)</h3>
+                    <p>
+                        Collaborated under Software Engineering methodologies to deliver an Stock Control System for
+                        <strong>Upright Storage Solution PH</strong>. Structured the user flow and developed intuitive
+                        frontend controls.
+                    </p>
+                    <small>2025 - 2026 (3rd Year)</small>
+                </div>
+
+                <!-- 2ND YEAR: FAST FOOD BRAND THESIS -->
+                <div class="experience">
+                    <h3>Academic Web Development</h3>
+                    <p>
+                        Independently engineered a custom fast food brand website. Implemented core database
+                        fundamentals using
+                        MySQL paired with dynamic client-side interactions using HTML, CSS, and JS.
+                    </p>
+                    <small>2024 - 2025 (2nd Year)</small>
+                </div>
+
+                <!-- 1ST YEAR: FIRST SYSTEMS -->
+                <div class="experience">
+                    <h3>Full-Stack Developer & Team Leader</h3>
+                    <p>
+                        Headed group project developments during foundational years. Successfully built a standalone
+                        POS/Ordering system
+                        and a systems-level utility project for the Operating Systems (OS) curriculum.
+                    </p>
+                    <small>2023 - 2024 (1st Year)</small>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- RIGHT SIDE (SocMed Compact Containers) -->
+        <div class="right">
+
+            <!-- THEME TOGGLE WIDGET -->
+            <div class="socmed-card compact-theme">
+                <span>Interface Mode</span>
+                <button id="themeBtn"><i class="fa-solid fa-moon"></i> Dark Mode</button>
+            </div>
+
+            <!-- PROJECTS CONTAINER -->
+            <div class="socmed-card">
+                <a href="project.html" style="text-decoration: none; color: inherit;">
+                    <div class="title-row">
+                        <h2><i class="fa-solid fa-laptop-code"></i> Featured Projects</h2>
+                        <span class="view-all-btn">View All <i class="fa-solid fa-arrow-right-long"></i></span>
+                    </div>
+                </a>
+
+                <div class="project-box">
+                    <div class="project-header">
+                        <h3>Full-Stack Cosmetic Website</h3>
+                        <span class="project-tag">Live</span>
+                    </div>
+                    <p>A full-stack cosmetic website built with modern web technologies.</p>
+                </div>
+
+                <div class="project-box">
+                    <div class="project-header">
+                        <h3>Racksmart Stock Control System</h3>
+                        <span class="project-tag">Web App</span>
+                    </div>
+                    <p>Efficient stock control solution for managing inventory in real-time.</p>
+                </div>
+            </div>
+
+            <!-- SKILLS CONTAINER -->
+            <div class="socmed-card">
+
+                <div class="title-row" onclick="window.location.href='stack.html';" style="cursor: pointer;">
+                    <h2><i class="fa-solid fa-brain"></i> Tech Stack</h2>
+                    <span class="view-all-btn">View All <i class="fa-solid fa-arrow-right-long"></i></span>
+                </div>
+
+                <div class="skill">
+                    <div class="skill-top">
+                        <span><i class="fa-brands fa-html5" style="color: #e34c26;"></i> HTML5</span>
+                        <span>95%</span>
+                    </div>
+                    <div class="bar">
+                        <div class="fill html"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div class="skill-top">
+                        <span><i class="fa-brands fa-css3-alt" style="color: #264de4;"></i> CSS3</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="bar">
+                        <div class="fill css"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div class="skill-top">
+                        <span><i class="fa-brands fa-js" style="color: #f7df1e;"></i> JavaScript</span>
+                        <span>75%</span>
+                    </div>
+                    <div class="bar">
+                        <div class="fill js"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SOCIALS CONTAINER -->
+            <div class="socmed-card">
+                <h2><i class="fa-solid fa-link"></i> Social Directory</h2>
+
+
+                <div class="social" data-link="https://www.facebook.com/kentbundaliannn">
+                    <i class="fa-brands fa-facebook social-icon"></i>
+                    <span>Facebook</span>
+                    <i class="fa-solid fa-chevron-right arrow-end"></i>
+                </div>
+
+                <div class="social"
+                    data-link="https://www.instagram.com/oh.peyddd/">
+                    <i class="fa-brands fa-instagram social-icon"></i>
+                    <span>Instagram</span>
+                    <i class="fa-solid fa-chevron-right arrow-end"></i>
+                </div>
+
+                <div class="social" data-link="https://github.com/knbundalian-code">
+                    <i class="fa-brands fa-github social-icon"></i>
+                    <span>GitHub</span>
+                    <i class="fa-solid fa-chevron-right arrow-end"></i>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="home.js"></script>
+</body>
+
+</html>
