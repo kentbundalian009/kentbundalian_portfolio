@@ -1,0 +1,9 @@
+"$schema" = "https://open-api.netlify.com/netlify.schema.json"
+
+[build]
+  publish = "kentbundalian-portfolio"
+
+[[redirects]]
+  from = "/"
+  to = "/home.html"
+  status = 200
