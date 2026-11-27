@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stack | Kent Bundalian</title>
+
+    <link rel="shortcut icon" href="1x1-photo.png" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="stack.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="left">
+    <div class="projects-header-nav">
+        <a href="home.html" class="back-home-btn">
+            <i class="fa-solid fa-arrow-left"></i> Back to Home
+        </a>
+        <div class="page-title-row">
+            <h2>Technologies Stack</h2>
+            <p>A collection of technologies and tools I've mastered.</p>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <div class="gdrive-section-title">Folders</div>
+    
+    <div class="projects-grid">
+        
+        <div class="project-folder-card" data-project="html5">
+            <div class="folder-icon-wrapper">
+                <i class="fa-brands fa-html5 tech-icon html-icon" style="font-size: 24px; color: #e34c26;"></i>
+                <h3>HTML5</h3>
+            </div>
+            <span class="project-tag live-tag">Advanced</span>
+        </div>
+
+        <div class="project-folder-card" data-project="css3">
+            <div class="folder-icon-wrapper">
+                <i class="fa-brands fa-css3-alt tech-icon css-icon" style="font-size: 24px; color: #264de4;"></i>
+                <h3>CSS3</h3>
+            </div>
+            <span class="project-tag live-tag">Advanced</span>
+        </div>
+
+        <div class="project-folder-card" data-project="javascript">
+            <div class="folder-icon-wrapper">
+                <i class="fa-brands fa-js tech-icon js-icon" style="font-size: 24px; color: #f7df1e;"></i>
+                <h3>JavaScript</h3>
+            </div>
+            <span class="project-tag app-tag">Intermediate</span>
+        </div>
+
+        <div class="project-folder-card" data-project="react">
+            <div class="folder-icon-wrapper">
+                <i class="fa-brands fa-react tech-icon react-icon" style="font-size: 24px; color: #61dafb;"></i>
+                <h3>React.js</h3>
+            </div>
+            <span class="project-tag app-tag">Intermediate</span>
+        </div>
+
+        <div class="project-folder-card" data-project="nodejs">
+            <div class="folder-icon-wrapper">
+                <i class="fa-brands fa-node-js tech-icon node-icon" style="font-size: 24px; color: #339933;"></i>
+                <h3>Node.js</h3>
+            </div>
+            <span class="project-tag app-tag">Intermediate</span>
+        </div>
+
+        <div class="project-folder-card" data-project="express">
+            <div class="folder-icon-wrapper">
+                <i class="fa-solid fa-server tech-icon express-icon" style="font-size: 22px;"></i>
+                <h3>Express.js</h3>
+            </div>
+            <span class="project-tag app-tag">Intermediate</span>
+        </div>
+
+        <div class="project-folder-card" data-project="mongodb">
+            <div class="folder-icon-wrapper">
+                <i class="fa-solid fa-database tech-icon mongo-icon" style="font-size: 22px; color: #47a248;"></i>
+                <h3>MongoDB</h3>
+            </div>
+            <span class="project-tag app-tag">Intermediate</span>
+        </div>
+
+        <div class="project-folder-card" data-project="php">
+            <div class="folder-icon-wrapper">
+                <i class="fa-brands fa-php tech-icon php-icon" style="font-size: 24px; color: #777bb4;"></i>
+                <h3>PHP</h3>
+            </div>
+            <span class="project-tag app-tag">Intermediate</span>
+        </div>
+
+        <div class="project-folder-card" data-project="java">
+            <div class="folder-icon-wrapper">
+                <i class="fa-brands fa-java tech-icon java-icon" style="font-size: 24px; color: #007396;"></i>
+                <h3>Java</h3>
+            </div>
+            <span class="project-tag app-tag">Intermediate</span>
+        </div>
+
+        <div class="project-folder-card" data-project="javaswing">
+            <div class="folder-icon-wrapper">
+                <i class="fa-solid fa-window-restore tech-icon swing-icon" style="font-size: 22px; color: #f5821f;"></i>
+                <h3>Java Swing</h3>
+            </div>
+            <span class="project-tag design-tag" style="background: rgba(107, 114, 128, 0.1); color: var(--text-muted);">Basic</span>
+        </div>
+
+    </div>
+</div>
+
+        <div class="right">
+            <div class="socmed-card compact-theme">
+                <span>Interface Mode</span>
+                <button id="themeBtn"><i class="fa-solid fa-moon"></i> Dark Mode</button>
+            </div>
+
+            <div class="socmed-card">
+                <h2><i class="fa-solid fa-circle-info"></i> Repository Info</h2>
+                <p style="font-size: 13px; color: var(--text-muted);">
+Programming languages and technologies I use to build modern, efficient, and scalable applications.                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="projectModal" class="project-modal">
+        <div class="modal-wrapper">
+            <span class="close-modal">&times;</span>
+            
+            <div class="modal-split-container">
+                <div class="modal-gallery-pane">
+                    <button class="nav-btn prev-btn"><i class="fa-solid fa-chevron-left"></i></button>
+                    <img id="modalImgTarget" src="" alt="Project Preview">
+                    <button class="nav-btn next-btn"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+
+                <div class="modal-info-pane">
+                    <div class="pane-header">
+                        <div class="avatar-wrapper">
+                            <img src="1x1-photo.png" alt="Kent">
+                        </div>
+                        <div class="pane-title-meta">
+                            <h2 id="modalProjectTitle">Project Title</h2>
+                            <p class="role">Kent Bundalian • Web Developer</p>
+                        </div>
+                    </div>
+
+                    <div class="pane-body">
+                        <h3><i class="fa-solid fa-file-lines"></i> Project Overview</h3>
+                        <p id="modalProjectDesc">Detailed description goes here...</p>
+                        
+                        <div class="tech-stack-used">
+                            <h3><i class="fa-solid fa-layer-group"></i> Technologies</h3>
+                            <div class="tags-container" id="modalTagsTarget">
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="project.js"></script>
+</body>
+</html>
