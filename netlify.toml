@@ -1,0 +1,10 @@
+# Plain static site (HTML/CSS/JS) — no framework, package manager, or build step.
+[build]
+  publish = "kentbundalian-portfolio"
+  command = ""
+
+# The site has no index.html; serve home.html at the root URL.
+[[redirects]]
+  from = "/"
+  to = "/home.html"
+  status = 200
